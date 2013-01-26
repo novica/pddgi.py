@@ -1,12 +1,13 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+
 
 #Скрипта што генерира правилен ПДД-ГИ излез по внесување на податоци
 #за секое лице што примило средства.
 
 #Треба да се генерираат две .TXT датотеки.
 
-import string
+#import string
 
 
 spisok = open('vraboteni.txt', 'r')
@@ -27,13 +28,13 @@ for line in spisok:
     vraboten['ime40'] = line[1].rstrip('\n')
     #Сега побарај податоци:
     
-    prompt = 'Внеси код за' + vraboten['ime40'] + ':\n' 
+    prompt = 'Внеси шифра на примања за' + vraboten['ime40'] + ':\n' 
     vraboten['code2'] = raw_input(prompt)
     #if  vraboten['code2'] е број???:
     #    vraboten['code2'] = str(vraboten['code2'])
     
     
-    prompt = 'Внеси бруто плата за' + vraboten['ime40'] + ':\n' 
+    prompt = 'Внеси бруто примања за' + vraboten['ime40'] + ':\n' 
     vraboten['bruto10'] = raw_input(prompt)
     vraboten['bruto10'] = str(vraboten['bruto10'])
     while len(vraboten['bruto10']) < 10:
@@ -57,7 +58,7 @@ for line in spisok:
     while len(vraboten['pdd10']) < 10:
         vraboten['pdd10'] = "0" + vraboten['pdd10']
     
-    prompt = 'Внеси нето плата за' + vraboten['ime40'] + ':\n' 
+    prompt = 'Внеси нето примања за' + vraboten['ime40'] + ':\n' 
     vraboten['neto10'] = raw_input(prompt)
     vraboten['neto10'] = str(vraboten['neto10'])
     while len(vraboten['neto10']) < 10:
