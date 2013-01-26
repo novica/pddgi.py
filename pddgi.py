@@ -22,16 +22,17 @@ for line in spisok:
     vraboten = {'code2': '', 'embg13': '', 'ime40': '', 'bruto10': '',
         'odbitoci10': '', 'olesnuvanje7': '', 'pdd10': '', 'neto10': ''}
     line = line.split(',')
-    vraboten['embg13'] = line[0].rstrip('\n')
+    vraboten['embg13'] = line[0]
+    line[1]  = line[1].rstrip('\n')
     while len(line[1]) < 40:
         line[1] = line[1] + ' '
-    vraboten['ime40'] = line[1].rstrip('\n')
+    vraboten['ime40'] = line[1]
     #Сега побарај податоци:
     
     prompt = 'Внеси шифра на примања за' + vraboten['ime40'] + ':\n' 
     vraboten['code2'] = raw_input(prompt)
-    #if  vraboten['code2'] е број???:
-    #    vraboten['code2'] = str(vraboten['code2'])
+    if isinstance(vraboten['code2'], int):
+        vraboten['code2'] = str(vraboten['code2'])
     
     
     prompt = 'Внеси бруто примања за' + vraboten['ime40'] + ':\n' 
