@@ -1,0 +1,10 @@
+1234567891234
+Sheeset znaci za ime na firma                               
+2012
+25 znaci za ime na ulica 
+deset broj
+Naseleno mesto e 30 znaci     
+Opstina e trieset znaci...... 
+021234567      
+021234577      
+60znaci@example.com                                         
