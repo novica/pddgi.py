@@ -28,48 +28,46 @@ for line in spisok:
         line[1] = line[1] + ' '
     vraboten['ime40'] = line[1]
     #Сега побарај податоци:
-    
-    prompt = 'Внеси шифра на примања за' + vraboten['ime40'] + ':\n' 
+
+    prompt = 'Внеси шифра на примања за ' + vraboten['ime40'].strip() + ':\n'
     vraboten['code2'] = raw_input(prompt)
     if isinstance(vraboten['code2'], int):
         vraboten['code2'] = str(vraboten['code2'])
-    
-    
-    prompt = 'Внеси бруто примања за' + vraboten['ime40'] + ':\n' 
+
+
+    prompt = 'Внеси бруто примања за ' + vraboten['ime40'].strip() + ':\n'
     vraboten['bruto10'] = raw_input(prompt)
     vraboten['bruto10'] = str(vraboten['bruto10'])
     while len(vraboten['bruto10']) < 10:
         vraboten['bruto10'] = "0" + vraboten['bruto10']
-    
-    prompt = 'Внеси одбитоци за' + vraboten['ime40'] + ':\n' 
+
+    prompt = 'Внеси одбитоци за ' + vraboten['ime40'].strip() + ':\n'
     vraboten['odbitoci10'] = raw_input(prompt)
     vraboten['odbitoci10'] = str(vraboten['odbitoci10'])
     while len(vraboten['odbitoci10']) < 10:
         vraboten['odbitoci10'] = "0" + vraboten['odbitoci10']
-    
-    prompt = 'Внеси даночно олеснување за' + vraboten['ime40'] + ':\n' 
+
+    prompt = 'Внеси даночно олеснување за ' + vraboten['ime40'].strip() + ':\n'
     vraboten['olesnuvanje7'] = raw_input(prompt)
     vraboten['olesnuvanje7'] = str(vraboten['olesnuvanje7'])
     while len(vraboten['olesnuvanje7']) < 7:
         vraboten['olesnuvanje7'] = "0" + vraboten['olesnuvanje7']
-    
-    prompt = 'Внеси ПДД за' + vraboten['ime40'] + ':\n' 
+
+    prompt = 'Внеси ПДД за ' + vraboten['ime40'].strip() + ':\n'
     vraboten['pdd10'] = raw_input(prompt)
     vraboten['pdd10'] = str(vraboten['pdd10'])
     while len(vraboten['pdd10']) < 10:
         vraboten['pdd10'] = "0" + vraboten['pdd10']
-    
-    prompt = 'Внеси нето примања за' + vraboten['ime40'] + ':\n' 
+
+    prompt = 'Внеси нето примања за ' + vraboten['ime40'].strip() + ':\n'
     vraboten['neto10'] = raw_input(prompt)
     vraboten['neto10'] = str(vraboten['neto10'])
     while len(vraboten['neto10']) < 10:
         vraboten['neto10'] = "0" + vraboten['neto10']
-    
-    
-    
+
     pddgiline = vraboten['code2']+ vraboten['embg13'] + vraboten['ime40']+ vraboten['bruto10'] + vraboten['odbitoci10'] + vraboten['olesnuvanje7'] + vraboten['pdd10'] + vraboten['neto10'] + '\n'
-    
+
     gipoed.write(pddgiline)
-    
+
 spisok.close()
 gipoed.close()
